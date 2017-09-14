@@ -1,0 +1,6 @@
+# Script created files:
+__pycache__
+
+build/
+*.c
+*.so

@@ -1,0 +1,1 @@
+f2py -c NBody_f2py.F90 --f90flags=-O3 -m nbody_f2py
