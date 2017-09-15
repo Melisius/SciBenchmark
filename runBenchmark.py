@@ -18,7 +18,7 @@ def runNBodyinitializer():
     box_x   = parameters[6]
     box_y   = parameters[7]
     box_z   = parameters[8]
-    steps   = 10
+    steps   = 100
     return particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps
 
 def runNBody():
