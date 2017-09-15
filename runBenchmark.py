@@ -1,6 +1,7 @@
 import numpy as np
 import time
 import os
+import NBody.NBody_numpy.runNBody_numpy as NBody_numpy
 import NBody.NBody_numba.runNBody_numba as NBody_numba
 import NBody.NBody_cython.runNBody_cython as NBody_cython
 import NBody.NBody_f2py.runNBody_f2py as NBody_f2py
@@ -18,26 +19,32 @@ def runNBodyinitializer():
     box_x   = parameters[6]
     box_y   = parameters[7]
     box_z   = parameters[8]
-    steps   = 100
+    steps   = 800
     return particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps
 
 def runNBody():
     
     particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps = runNBodyinitializer()
     start = time.time()
+    steps = int(steps/400)
+    NBody_numpy.runMD(particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps)
+    print((time.time()-start)/steps, 'Numpy per step')
+    
+    particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps = runNBodyinitializer()
+    start = time.time()
     NBody_numba.runMD(particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps)
-    print(time.time()-start, 'Numba')
+    print((time.time()-start)/steps, 'Numba per step')
     
     particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps = runNBodyinitializer()
     start = time.time()
     NBody_cython.runMD(particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps)
-    print(time.time()-start, 'Cython')
+    print((time.time()-start)/steps, 'Cython per step')
     
     particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps = runNBodyinitializer()
     particles = np.asfortranarray(particles)
     start = time.time()
     NBody_f2py.runMD(particles, cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, steps)
-    print(time.time()-start, 'f2py')
+    print((time.time()-start)/steps, 'f2py per step')
     
     
 runNBody()
