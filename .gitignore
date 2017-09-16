@@ -5,3 +5,6 @@ build/
 *.c
 *.so
 *.run
+*.mod
+output.txt
+timing.txt
