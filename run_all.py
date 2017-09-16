@@ -145,8 +145,7 @@ t_cpp     = np.genfromtxt('timing.txt')
 os.chdir('../..')
 fast = np.min([t_numpy,t_numba,t_cython,t_f2py,t_fortran,t_cpp])
 
-timefile.write('NBody,'+str(t_numpy)+','+str(t_numba)+','+str(t_cython)+','+str(t_f2py)+','+str(t_fortran)+','+str(t_cpp)+'\n')
-timefile.write('NBody relative to fastest,'+str(t_numpy/fast)+','+str(t_numba/fast)+','+str(t_cython/fast)+','+str(t_f2py/fast)+','+str(t_fortran/fast)+','+str(t_cpp/fast)+'\n')
+timefile.write('NBody,'+"{0:.2f}".format(t_numpy/fast)+','+"{0:.2f}".format(t_numba/fast)+','+"{0:.2f}".format(t_cython/fast)+','+"{0:.2f}".format(t_f2py/fast)+','+"{0:.2f}".format(t_fortran/fast)+','+"{0:.2f}".format(t_cpp/fast)+'\n')
 
 ## WRITE BENCHMARK FILE HermiteIntegral
 os.chdir('HermiteIntegral/HI_numpy')
@@ -164,8 +163,7 @@ t_cpp     = np.genfromtxt('timing.txt')
 os.chdir('../..')
 fast = np.min([t_numpy,t_numba,t_cython,t_f2py,t_fortran,t_cpp])
 
-timefile.write('Hermite Integral,'+str(t_numpy)+','+str(t_numba)+','+str(t_cython)+','+str(t_f2py)+','+str(t_fortran)+','+str(t_cpp)+'\n')
-timefile.write('Hermite Integral relative to fastest,'+str(t_numpy/fast)+','+str(t_numba/fast)+','+str(t_cython/fast)+','+str(t_f2py/fast)+','+str(t_fortran/fast)+','+str(t_cpp/fast)+'\n')
+timefile.write('Hermite Integral,'+"{0:.2f}".format(t_numpy/fast)+','+"{0:.2f}".format(t_numba/fast)+','+"{0:.2f}".format(t_cython/fast)+','+"{0:.2f}".format(t_f2py/fast)+','+"{0:.2f}".format(t_fortran/fast)+','+"{0:.2f}".format(t_cpp/fast)+'\n')
 
 timefile.close()
 print('Benchmark file written')
