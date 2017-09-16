@@ -152,7 +152,7 @@ PROGRAM runhi
 			Pz = integralfloat(i,6)
 			p = integralfloat(i,7)
 			CALL r(l1l2, m1m2, n1n2, Cx, Cy, Cz, Px, Py, Pz, p, R1buffer, Rbuffer)
-			WRITE(3,*) R1buffer(1,1,1)
+			WRITE(3,*) R1buffer(l1l2+1,m1m2+1,n1n2+1)
 		END DO
 		CLOSE(3)
 	END DO

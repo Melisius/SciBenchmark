@@ -30,7 +30,7 @@ def runHI():
 			Pz = integralfloat[i,5]
 			p = integralfloat[i,6]
 			HI_f2py.hi.r(l1l2, m1m2, n1n2, Cx, Cy, Cz, Px,  Py, Pz, p, R1buffer, Rbuffer)
-			outfile.write(str(R1buffer[0,0,0])+'\n')
+			outfile.write(str(R1buffer[l1l2,m1m2,n1n2])+'\n')
 		outfile.close()
 	timingfile.write(str(time.time()-start))
 	timingfile.close()

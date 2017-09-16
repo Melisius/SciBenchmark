@@ -169,7 +169,7 @@ int main(){
 			Pz = integralfloat[i][5];
 			p = integralfloat[i][6];
 			R(l1l2, m1m2, n1n2, Cx, Cy, Cz, Px, Py, Pz, p, R1buffer, Rbuffer);
-			outfile << R1buffer[0][0][0] << '\n';
+			outfile << R1buffer[l1l2][m1m2][n1n2] << '\n';
 		}
 		outfile.close();
 	}

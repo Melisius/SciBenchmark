@@ -92,7 +92,7 @@ def runHI():
 		Pz = integralfloat[i,5]
 		p = integralfloat[i,6]
 		R1 = R(l1l2, m1m2, n1n2, Cx, Cy, Cz, Px,  Py, Pz, p, R1buffer, Rbuffer)
-		outfile.write(str(R1[0,0,0])+'\n')
+		outfile.write(str(R1[l1l2,m1m2,n1n2])+'\n')
 	timingfile.write(str((time.time()-start)*100))
 	timingfile.close()
 	outfile.close()
