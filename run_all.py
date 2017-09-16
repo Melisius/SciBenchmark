@@ -122,7 +122,6 @@ calc = np.genfromtxt('output.txt')
 assert (check - calc < 10**-4).all()
 os.chdir('../HI_cpp')
 calc = np.genfromtxt('output.txt')
-print(np.max(np.abs(check - calc)))
 assert (check - calc < 10**-4).all()
 os.chdir('../..')
 
