@@ -4,7 +4,7 @@ from numba import jit, float64
 from numba.types import Tuple
 
 
-@jit(Tuple((float64[:,:], float64))(float64[:,:],float64,float64,float64,float64,float64,float64,float64),nopython=True,cache=True)
+@jit(Tuple((float64[:,:], float64))(float64[:,:],float64,float64,float64,float64,float64,float64,float64),nopython=True,cache=False)
 def Get_Forces(particles, m, sigma, eps, cuttoff, box_x, box_y, box_z):
     cuttoffsq = (sigma*cuttoff)**2
     sigma6 = sigma**6
@@ -50,7 +50,7 @@ def Get_Forces(particles, m, sigma, eps, cuttoff, box_x, box_y, box_z):
     return particles, pot
     
 
-@jit(Tuple((float64[:,:], float64, float64))(float64[:,:],float64,float64,float64,float64,float64,float64,float64,float64),nopython=True,cache=True)
+@jit(Tuple((float64[:,:], float64, float64))(float64[:,:],float64,float64,float64,float64,float64,float64,float64,float64),nopython=True,cache=False)
 def VelocityVerlet(particles, cuttoff, m, eps, sigma, box_x, box_y, box_z, dt):
     Forces_old = np.zeros((len(particles), 3))
     N = len(particles)
@@ -111,7 +111,7 @@ def runMD():
     box_x   = parameters[6]
     box_y   = parameters[7]
     box_z   = parameters[8]
-    steps   = 800
+    steps   = 1000
     out = open('output.txt','w')
     timing = open('timing.txt','w')
     start = time.time()
@@ -119,7 +119,7 @@ def runMD():
         particles, pot, Ekin = VelocityVerlet(particles, cuttoff, m, eps, sigma, box_x, box_y, box_z, dt)
         out.write(str(Ekin)+' '+str(pot)+'\n')
     runtime = time.time() - start
-    timing.write(str(runtime/steps))
+    timing.write(str(runtime))
     timing.close()
     out.close()
 

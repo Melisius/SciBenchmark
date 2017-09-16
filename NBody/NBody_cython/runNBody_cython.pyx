@@ -20,7 +20,7 @@ cpdef runMD():
     box_x   = parameters[6]
     box_y   = parameters[7]
     box_z   = parameters[8]
-    steps   = 800
+    steps   = 1000
     out = open('output.txt','w')
     timing = open('timing.txt','w')
     start = time.time()
@@ -28,6 +28,6 @@ cpdef runMD():
         particles, pot, Ekin = VelocityVerlet(particles, cuttoff, m, eps, sigma, box_x, box_y, box_z, dt)
         out.write(str(Ekin)+' '+str(pot)+'\n')
     runtime = time.time() - start
-    timing.write(str(runtime/steps))
+    timing.write(str(runtime))
     timing.close()
     out.close()

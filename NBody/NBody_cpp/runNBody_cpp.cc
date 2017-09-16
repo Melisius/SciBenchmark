@@ -133,7 +133,7 @@ int main(){
 	fileparameters >> box_x;
 	fileparameters >> box_y;
 	fileparameters >> box_z;
-    steps = 800;
+    steps = 1000;
 	outfile.open("output.txt");
 	timefile.open("timing.txt");
 	
@@ -144,7 +144,7 @@ int main(){
 	}
 	end = std::chrono::system_clock::now();
 	std::chrono::duration<double> elapsed_seconds = end-start;
-	timefile << elapsed_seconds.count()/steps << '\n';
+	timefile << elapsed_seconds.count() << '\n';
 	outfile.close();
 	timefile.close();
 }

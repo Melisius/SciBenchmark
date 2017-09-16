@@ -1,6 +1,7 @@
 import os
 import subprocess
 
+# Compile all NBody
 os.chdir('NBody/NBody_cython')
 bashCommand = "python setup.py build_ext --inplace"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
@@ -24,3 +25,30 @@ bashCommand = "gfortran -O3 runNBody_fortran.F90 -o runNBody_fortran.run"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 print(output)
+os.chdir('../..')
+
+# Compile all HermiteIntegral
+os.chdir('HermiteIntegral/HI_cython')
+bashCommand = "python setup.py build_ext --inplace"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+print(output)
+
+os.chdir('../HI_f2py')
+bashCommand = "f2py -c HI_f2py.F90 --f90flags=-O3 -m hi_f2py"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+print(output)
+
+os.chdir('../HI_cpp')
+bashCommand = "g++ -std=c++14 -O3 runHI_cpp.cc -o runHI_cpp.run"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+print(output)
+
+os.chdir('../HI_fortran')
+bashCommand = "gfortran -O3 runHI_fortran.F90 -o runHI_fortran.run"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+print(output)
+os.chdir('../..')

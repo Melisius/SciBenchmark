@@ -128,7 +128,7 @@ PROGRAM runnbody
 	READ(7,*) box_y
 	READ(7,*) box_z
 	CLOSE(7)
-	steps = 800
+	steps = 1000
 	
 	OPEN(4,file='timing.txt',action='write',status='replace')
 	OPEN(3,file='output.txt',action='write',status='replace')
@@ -138,7 +138,7 @@ PROGRAM runnbody
 		WRITE(3,*)ekin, pot
 	END DO
 	call system_clock(end_time)
-	WRITE(4,*)real(end_time-begin_time)/real(rate)/real(steps)
+	WRITE(4,*)real(end_time-begin_time)/real(rate)
 	CLOSE(3)
 	CLOSE(4)
 	
