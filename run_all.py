@@ -1,7 +1,7 @@
 import os
 import subprocess
 import numpy as np
-"""
+
 # RUN ALL NBODY
 os.chdir('NBody/NBody_numpy')
 bashCommand = "python runNBody_numpy.py"
@@ -39,7 +39,7 @@ process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 print('NBody_cpp done')
 os.chdir('../..')
-"""
+
 # ASSERT NBody results
 os.chdir('NBody')
 check = np.genfromtxt('NBodyOutputCheck.txt')
@@ -83,4 +83,5 @@ timefile.write(',Numpy,Numba,Cython,f2py,Fortran,C++'+'\n')
 timefile.write('NBody per step,'+str(t_numpy)+','+str(t_numba)+','+str(t_cython)+','+str(t_f2py)+','+str(t_fortran)+','+str(t_cpp)+'\n')
 timefile.write('NBody relative to fastest,'+str(t_numpy/fast)+','+str(t_numba/fast)+','+str(t_cython/fast)+','+str(t_f2py/fast)+','+str(t_fortran/fast)+','+str(t_cpp/fast)+'\n')
 timefile.close()
+print('Benchmark file written')
 
