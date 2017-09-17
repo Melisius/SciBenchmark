@@ -109,7 +109,7 @@ END MODULE nbody
 
 PROGRAM runnbody
 	USE nbody
-	INTEGER :: i, j, steps, end_time, begin_time
+	INTEGER :: i, j, steps, end_time, begin_time, rate
 	REAL(8) :: cuttoff, dt, m, eps, sigma, box_x, box_y, box_z, N, pot, ekin
 	REAL(8), DIMENSION(2000,9) :: particles
 	OPEN(7,file='particlesdone.txt',status='old',action='read')

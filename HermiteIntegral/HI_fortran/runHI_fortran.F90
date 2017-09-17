@@ -111,7 +111,7 @@ END MODULE hi
 
 PROGRAM runhi
 	USE hi
-	INTEGER :: i,j,l1l2,m1m2,n1n2, end_time, begin_time
+	INTEGER :: i,j,l1l2,m1m2,n1n2, end_time, begin_time, rate
 	REAL(8) :: Cx, Cy, Cz, Px, Py, Pz, p
 	REAL(8), DIMENSION(33777,10) :: parameters
 	INTEGER, DIMENSION(33777,3) :: integralint

@@ -6,9 +6,9 @@ os: linux
 addons:
   apt:
     packages:
-      - gcc
-      - gfortran
-      - g++
+      - gcc 5.4
+      - gfortran 5.4
+      - g++ 5.4
 
 install:
   - sudo apt-get update
