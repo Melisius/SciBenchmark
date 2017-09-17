@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/Melisius/SciBenchmark.svg?branch=master)](https://travis-ci.org/Melisius/SciBenchmark)
 [![Documentation Status](https://readthedocs.org/projects/scibenchmark/badge/?version=latest)](http://scibenchmark.readthedocs.io/en/latest/?badge=latest)
 
 # SciBenchmark
