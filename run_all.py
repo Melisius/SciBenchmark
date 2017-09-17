@@ -102,7 +102,7 @@ assert (check - calc < 1).all()
 os.chdir('../..')
 print('NBody results checked')
 
-## ASSERT RSULTS HermiteIntegrals
+## ASSERT RSULTS HermiteIntegral
 os.chdir('HermiteIntegral')
 check = np.genfromtxt('HIOutputCheck.txt')
 os.chdir('HI_numpy')
@@ -124,6 +124,7 @@ os.chdir('../HI_cpp')
 calc = np.genfromtxt('output.txt')
 assert (check - calc < 10**-4).all()
 os.chdir('../..')
+print('HermiteINtegral results checked')
 
 ## WRITE BENCHMARK FILE NBody
 timefile = open('Benchmarks.csv','w')

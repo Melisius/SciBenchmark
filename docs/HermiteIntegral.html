@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hermite Integral &mdash; SciBenchmark  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SciBenchmark  documentation" href="index.html"/>
+        <link rel="prev" title="N-Body" href="nbody.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SciBenchmark
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Installation and running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarkfile.html">Benchmark rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nbody.html">N-Body</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hermite Integral</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#boys-function">Boys function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Hermite integral</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SciBenchmark</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hermite Integral</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/HermiteIntegral.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hermite-integral">
+<h1>Hermite Integral<a class="headerlink" href="#hermite-integral" title="Permalink to this headline">¶</a></h1>
+<p>Hermite integrals can be used to evaluate electronic integrals. Here is an overview of the mathematical funtions used in the Hermite integrals.</p>
+<div class="section" id="boys-function">
+<h2>Boys function<a class="headerlink" href="#boys-function" title="Permalink to this headline">¶</a></h2>
+<p>The boys can be evaulated as:</p>
+<div class="math">
+<p><img src="_images/math/224af517e97338b7e29c1ae2f59728584d161738.png" alt="F_{m}(z)=\exp\left(-z\right)\sum_{i=0}^{\infty}\frac{\left(2m-1\right)!!\left(2z\right)^{i}}{\left(2m+2i+1\right)!!}"/></p>
+</div><p>And for large $z$ larger than 25 it can be approximated as:</p>
+<div class="math">
+<p><img src="_images/math/39dddaf510bb3f5f1492b176355d77506a6b7789.png" alt="F_{m}\left(z\right)\approx\frac{\left(2m-1\right)!!}{2^{m+1}}\sqrt{\frac{\pi}{z^{2m+1}}}"/></p>
+</div></div>
+<div class="section" id="id1">
+<h2>Hermite integral<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The Hermite integrals is given as the following recurrence relations:</p>
+<div class="math">
+<p><img src="_images/math/d2424e06239ab29383e635e9d99828e73ebcdd6e.png" alt="R_{t+1,u,v}^{n}\left(p,R_{\mathrm{PC}}\right)=tR_{t-1,u,v}^{n+1}\left(p,R_{\mathrm{PC}}\right)+X_{\mathrm{PC}}R_{t,u,v}^{n+1}\left(p,R_{\mathrm{PC}}\right)"/></p>
+</div><div class="math">
+<p><img src="_images/math/d376c2acbc373420c21122bc173b0992633406ad.png" alt="R_{t,u+1,v}^{n}\left(p,R_{\mathrm{PC}}\right)=uR_{t,u-1,v}^{n+1}\left(p,R_{\mathrm{PC}}\right)+Y_{\mathrm{PC}}R_{t,u,v}^{n+1}\left(p,R_{\mathrm{PC}}\right)"/></p>
+</div><div class="math">
+<p><img src="_images/math/29d1a67b1ec5b3464e49ab2d32bac4e844168e2e.png" alt="R_{t,u,v+1}^{n}\left(p,R_{\mathrm{PC}}\right)=vR_{t,u,v-1}^{n+1}\left(p,R_{\mathrm{PC}}\right)+Z_{\mathrm{PC}}R_{t,u,v}^{n+1}\left(p,R_{\mathrm{PC}}\right)"/></p>
+</div><p>With the boundary condition:</p>
+<div class="math">
+<p><img src="_images/math/f156200f7a8a9a2af93947d614babe4e8c266e37.png" alt="R_{0,0,0}^{n}\left(p,R_{\mathrm{PC}}\right)=\left(-2p\right)^{n}F_{n}\left(pR_{\mathrm{PC}}^{2}\right)"/></p>
+</div></div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="nbody.html" class="btn btn-neutral" title="N-Body" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Erik Kjellgren.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 MODULE nbody
 contains 
 
-SUBROUTINE get_forces(particles, m, sigma, eps, cuttoff, box_x, box_y, box_z, pot)
+PURE SUBROUTINE get_forces(particles, m, sigma, eps, cuttoff, box_x, box_y, box_z, pot)
 	IMPLICIT NONE
 	REAL(8), INTENT(in) :: m, sigma, eps, cuttoff, box_x, box_y, box_z
 	REAL(8), DIMENSION(:,:), INTENT(inout) :: particles
@@ -51,7 +51,7 @@ SUBROUTINE get_forces(particles, m, sigma, eps, cuttoff, box_x, box_y, box_z, po
 END SUBROUTINE get_forces
 
 
-SUBROUTINE velocityverlet(particles, cuttoff, m, eps, sigma, box_x, box_y, box_z, dt, pot, ekin)
+PURE SUBROUTINE velocityverlet(particles, cuttoff, m, eps, sigma, box_x, box_y, box_z, dt, pot, ekin)
 	IMPLICIT NONE
 	REAL(8), INTENT(in) :: cuttoff, m, eps, sigma, box_x, box_y, box_z, dt
 	REAL(8), DIMENSION(:,:), INTENT(inout) :: particles

@@ -8,3 +8,4 @@ build/
 *.mod
 output.txt
 timing.txt
+.cache/

@@ -9,7 +9,7 @@ output, error = process.communicate()
 print(output)
 
 os.chdir('../NBody_f2py')
-bashCommand = "f2py -c NBody_f2py.F90 --f90flags=-Ofast -m nbody_f2py"
+bashCommand = "f2py -c NBody_f2py.F90 --opt=-Ofast -m nbody_f2py"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 print(output)
@@ -35,7 +35,7 @@ output, error = process.communicate()
 print(output)
 
 os.chdir('../HI_f2py')
-bashCommand = "f2py -c HI_f2py.F90 --f90flags=-Ofast -m hi_f2py"
+bashCommand = "f2py -c HI_f2py.F90 --opt=-Ofast -m hi_f2py"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 print(output)
