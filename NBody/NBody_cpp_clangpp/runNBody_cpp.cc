@@ -57,7 +57,7 @@ std::vector<double> VelocityVerlet(std::array<std::array<double, 9>, 2000>& part
                       const double cuttoff, const double m, const double eps, 
 					  const double sigma, const double box_x, const double box_y, 
 					  const double box_z, const double dt){
-	std::array<std::array<double, 3>, particles.size()> Forces_old;
+	std::array<std::array<double, 3>, 2000> Forces_old;
 	const int N=particles.size();
 	double Ekin=0.0, pot;
 	std::vector<double> output;
@@ -133,7 +133,7 @@ int main(){
 	fileparameters >> box_x;
 	fileparameters >> box_y;
 	fileparameters >> box_z;
-    steps = 1000;
+    steps = 100;
 	outfile.open("output.txt");
 	timefile.open("timing.txt");
 	
@@ -144,7 +144,7 @@ int main(){
 	}
 	end = std::chrono::system_clock::now();
 	std::chrono::duration<double> elapsed_seconds = end-start;
-	timefile << elapsed_seconds.count() << '\n';
+	timefile << elapsed_seconds.count()*10.0 << '\n';
 	outfile.close();
 	timefile.close();
 }

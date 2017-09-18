@@ -40,7 +40,7 @@ double boys(const double& m, const double& z){
 	return F;
 }
 
-int R(const int& l1l2,
+void R(const int& l1l2,
 	const int& m1m2, const int& n1n2, const double& Cx, const double&  Cy,
 	const double& Cz, const double& Px, const double& Py, const double& Pz,
 	const double& p, vector<vector<vector<double>>>& R1, 
