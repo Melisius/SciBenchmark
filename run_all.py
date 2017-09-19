@@ -140,7 +140,7 @@ calc = np.genfromtxt('output.txt')
 assert (np.abs(check - calc) < 10**-4).all()
 os.chdir('../HI_cpp_clangpp')
 calc = np.genfromtxt('output.txt')
-assert (np.abs(check[0:100] - calc[0:100]) < 10**-4).all()
+assert (np.abs(check - calc) < 10**-4).all()
 os.chdir('../..')
 print('HermiteINtegral results checked')
 

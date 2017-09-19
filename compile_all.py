@@ -15,7 +15,7 @@ output, error = process.communicate()
 print(output)
 
 os.chdir('../NBody_cpp_gpp')
-bashCommand = "g++ -march=native -std=c++11 -Ofast runNBody_cpp.cc -o runNBody_cpp.run"
+bashCommand = "g++ -march=native -std=c++14 -Ofast runNBody_cpp.cc -o runNBody_cpp.run"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 print(output)
@@ -53,7 +53,7 @@ output, error = process.communicate()
 print(output)
 
 os.chdir('../HI_cpp_clangpp')
-bashCommand = "clang++ -march=native -std=c++11 -Ofast runHI_cpp.cc -o runHI_cpp.run"
+bashCommand = "clang++ -march=native -std=c++14 -Ofast runHI_cpp.cc -o runHI_cpp.run"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 print(output)
