@@ -6,7 +6,7 @@
 #include <tuple>
 #include <chrono>
 
-double Get_Forces(std::array<std::array<double, 9>, 2000>& particles, const double& m ,
+inline double Get_Forces(std::array<std::array<double, 9>, 2000>& particles, const double& m ,
                               const double& sigma, const double& eps, const double& cuttoff, const double& box_x,
 							  const double& box_y, const double box_z){
 	const double cuttoffsq = std::pow(sigma*cuttoff, 2);
