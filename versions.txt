@@ -1,0 +1,9 @@
+python 3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 13:51:32) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+b'GNU Fortran (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609'
+b'g++ (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609'
+b'gcc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609'
+b'clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)'
+numpy: 1.13.1
+numba: 0.35.0
+cython: 0.26

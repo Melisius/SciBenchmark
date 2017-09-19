@@ -189,3 +189,52 @@ timefile.write('Hermite Integral,'+"{0:.2f}".format(t_numpy/fast)+','+"{0:.2f}".
 
 timefile.close()
 print('Benchmark file written')
+
+
+# WRITE VERSIONS
+import sys
+versionfile = open('versions.txt','w')
+versionfile.write("python "+sys.version)
+versionfile.write('\n')
+
+bashCommand = "gfortran --version"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+A = output.splitlines()
+versionfile.write(str(A[0]))
+versionfile.write('\n')
+
+bashCommand = "g++ --version"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+A = output.splitlines()
+versionfile.write(str(A[0]))
+versionfile.write('\n')
+
+bashCommand = "gcc --version"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+A = output.splitlines()
+versionfile.write(str(A[0]))
+versionfile.write('\n')
+
+bashCommand = "clang --version"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+A = output.splitlines()
+versionfile.write(str(A[0]))
+versionfile.write('\n')
+
+import numpy
+import cython
+import numba
+versionfile.write("numpy: "+str(numpy.version.version))
+versionfile.write('\n')
+versionfile.write("numba: "+str(numba.__version__))
+versionfile.write('\n')
+versionfile.write("cython: "+str(cython.__version__))
+versionfile.write('\n')
+
+versionfile.close()
+print("versionfile written")
+
