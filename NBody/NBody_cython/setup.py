@@ -7,6 +7,6 @@ Cython.Compiler.Options.get_directive_defaults()['cdivision'] = True
 Cython.Compiler.Options.get_directive_defaults()['boundscheck'] = False
 Cython.Compiler.Options.get_directive_defaults()['wraparound'] = False
 
-ext_modules=[Extension('runNBody_cython',['runNBody_cython.pyx'])]
+ext_modules=[Extension('runNBody_cython',['runNBody_cython.pyx'],extra_compile_args=["-O3 -march=native"])]
 
 setup(ext_modules=cythonize(ext_modules), include_dirs=[numpy.get_include()])
